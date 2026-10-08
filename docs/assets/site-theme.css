@@ -1,0 +1,45 @@
+/* このファイルは build が site.toml から生成します。直接編集しないでください。 */
+
+:root{
+  --accent:#855cd6;
+  --accent-dark:#5e3aad;
+  --accent-bright:#9a77e0;
+}
+
+/* 共通部品の飾りの色（site.toml の [theme]） */
+:root{
+  --bg:#f4f0fc;
+  --bg-dot-1:rgba(133,92,214,.12);
+  --bg-dot-2:rgba(255,171,25,.14);
+  --rainbow:linear-gradient(90deg,#4c97ff,#9966ff,#cf63cf,#ffbf00,#ffab19,#59c059);
+  --cover-glow-1:#fff0d1;
+  --cover-glow-2:#ebe2fb;
+  --hint-bg:#f3eefc;
+  --qr-frame:#ccb3ff;
+}
+
+/* 章ページのスライドの枠色（[theme] slide_frames を順にくり返す） */
+@media screen {
+  body:not(.mode-present) .slide:nth-of-type(6n+1){ --frame:#a6cbff; }
+  body:not(.mode-present) .slide:nth-of-type(6n+2){ --frame:#ccb3ff; }
+  body:not(.mode-present) .slide:nth-of-type(6n+3){ --frame:#e7b1e7; }
+  body:not(.mode-present) .slide:nth-of-type(6n+4){ --frame:#ffdf80; }
+  body:not(.mode-present) .slide:nth-of-type(6n+5){ --frame:#acdfac; }
+  body:not(.mode-present) .slide:nth-of-type(6n+6){ --frame:#ffc58c; }
+}
+
+/* もくじカードの枠色（frontmatter の color:） */
+.c1{ --frame:#a6cbff; }
+.c2{ --frame:#ccb3ff; }
+.c3{ --frame:#e7b1e7; }
+.c4{ --frame:#ffdf80; }
+.c5{ --frame:#acdfac; }
+
+/* もくじのセクションの区切り線 */
+.s-intro .section-line{ background:linear-gradient(90deg,#9966ff,#4c97ff); }
+.s-basic .section-line{ background:linear-gradient(90deg,#4c97ff,#9966ff,#cf63cf,#ffbf00); }
+.s-ctrl .section-line{ background:linear-gradient(90deg,#ffab19,#5cb1d6,#ff8c1a); }
+.s-game .section-line{ background:linear-gradient(90deg,#ff6680,#ffab19,#59c059,#4c97ff); }
+.s-ext .section-line{ background:linear-gradient(90deg,#0fbd8c,#5cb1d6); }
+.s-project .section-line{ background:linear-gradient(90deg,#ff6680,#9966ff); }
+.s-appendix .section-line{ background:linear-gradient(90deg,#cfd8dc,#b0bec5); }

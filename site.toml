@@ -1,0 +1,106 @@
+# =========================================================================
+# site.toml  --  この教材だけのちがいを集めた設定
+#
+# 共通のしくみ（build の手順・CSS・JS・テンプレート）は workshop-kit 側にある。
+# ここに無いものを変えたくなったら、kit を直す＝ぜんぶの教材に効く、と考える。
+# =========================================================================
+
+[site]
+name         = "Scratch 体験ワークショップ"
+header       = "Scratch 体験ワークショップ"
+logo         = "logo.png"                 # 見出しの頭に出すオレンジのブロック（assets/logo.png。Scratch のロゴではなくオリジナル）
+base_url     = "https://taikiishii.github.io/scratch-workshop/"
+title_suffix = " — Scratch ワークショップ"
+
+# Scratch の画面と同じ紫。オレンジはロゴ（assets/logo.png）だけに使う。
+accent        = "#855cd6"   # Scratch のメニューバーの紫（白文字で 4.7:1）
+accent_dark   = "#5e3aad"   # 見出しの文字・リンク（白地で 7.8:1）
+accent_bright = "#9a77e0"   # ヘッダーのグラデーションの明るいほう
+
+# ---- 共通部品の飾りの色 ---------------------------------------------------
+# 書いた項目だけ、kit の既定（ミント色の背景・虹色の線）を上書きする。
+# 紫の地に、Scratch のブロックの色をちらす。
+[theme]
+bg           = "#f4f0fc"                                       # うすいラベンダー
+bg_dots      = ["rgba(133,92,214,.12)", "rgba(255,171,25,.14)"] # 紫とオレンジの水玉
+rainbow      = ["#4c97ff", "#9966ff", "#cf63cf", "#ffbf00", "#ffab19", "#59c059"]
+slide_frames = ["#a6cbff", "#ccb3ff", "#e7b1e7", "#ffdf80", "#acdfac", "#ffc58c"]
+cover_glow   = ["#fff0d1", "#ebe2fb"]                          # 左上オレンジ・右下ラベンダー
+hint_bg      = "#f3eefc"                                       # 博士の吹き出し
+qr_frame     = "#ccb3ff"
+qr_dark      = "#3b2670"                                       # QR の点（こい紫）
+
+# ---- もくじカードの枠色 ---------------------------------------------------
+# frontmatter の color: がこのキーを引く。c1〜c5 をぐるぐる使う。
+# Scratch のブロックの色を、カードの枠に合うようにうすくしたもの。
+[palette]
+c1 = "#a6cbff"   # 動き     #4C97FF
+c2 = "#ccb3ff"   # 見た目   #9966FF
+c3 = "#e7b1e7"   # 音       #CF63CF
+c4 = "#ffdf80"   # イベント #FFBF00
+c5 = "#acdfac"   # 演算     #59C059
+
+# ---- もくじのセクション ---------------------------------------------------
+# 並べた順に表示される。name は frontmatter の section: と一致させる。
+# 章フォルダ名の頭： i=導入編 / b=基本編 / c=制御編 / g=ゲーム編 / e=拡張機能編 / p=作品編 / x=付録
+[[sections]]
+name  = "導入編"
+cls   = "s-intro"
+title = "🔰 導入編"
+sub   = "Scratch をひらいて、ネコを動かしてみよう"
+line  = ["#9966ff", "#4c97ff"]
+
+[[sections]]
+name  = "基本編"
+cls   = "s-basic"
+title = "🧱 基本編"
+sub   = "動き・見た目・音・イベントのブロックをつかおう"
+line  = ["#4c97ff", "#9966ff", "#cf63cf", "#ffbf00"]
+
+[[sections]]
+name  = "制御編"
+cls   = "s-ctrl"
+title = "🔁 制御編"
+sub   = "くりかえし・もしも・変数でプログラムを組み立てる"
+line  = ["#ffab19", "#5cb1d6", "#ff8c1a"]
+
+[[sections]]
+name  = "ゲーム編"
+cls   = "s-game"
+title = "🎮 ゲーム編"
+sub   = "いろいろな遊び方のゲームを、シンプルなプログラムで作ろう"
+line  = ["#ff6680", "#ffab19", "#59c059", "#4c97ff"]
+
+[[sections]]
+name  = "拡張機能編"
+cls   = "s-ext"
+title = "🧩 拡張機能編"
+sub   = "ペン・音楽・カメラ・マイクロビットで広げよう"
+line  = ["#0fbd8c", "#5cb1d6"]
+
+[[sections]]
+name  = "作品編"
+cls   = "s-project"
+title = "🛠 作品編"
+sub   = "自分だけの作品を、考えるところから発表まで"
+line  = ["#ff6680", "#9966ff"]
+
+[[sections]]
+name  = "付録"
+cls   = "s-appendix"
+title = "📎 付録"
+sub   = "じゅんびする大人むけ・こまったとき"
+line  = ["#cfd8dc", "#b0bec5"]
+
+# ---- コードの色分け -------------------------------------------------------
+# Scratch は文字のプログラムを書かないので、いまは空。
+[code]
+namespaces = []
+
+# ---- 博士の吹き出し -------------------------------------------------------
+[mascot]
+auto     = true   # 60文字未満の短い吹き出しは顔だけのアイコンにする
+full_min = 60     # >> ／ >| で個別に上書きできる
+
+[license]
+copyright = "Copyright © 2026 Taiki Ishii"
